@@ -1,13 +1,16 @@
 import mysql.connector
 
-dataBase = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='ijaz123'
+mydb = mysql.connector.connect(
+    host="localhost",  # hostname
+    user="root",                   # the user who has privilege to the db
+    passwd="ijaz123",  # password for user
+    database="Factdb",  # database name
+    auth_plugin='mysql_native_password',
+
 )
 
-cursorObject = dataBase.cursor()
+cursorObject = mydb.cursor()
 
-cursorObject.execute("CREATE DATABASE elderco")
+cursorObject.execute("CREATE DATABASE Factdb")
 
 print("All done !")
